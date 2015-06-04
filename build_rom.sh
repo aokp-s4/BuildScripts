@@ -57,7 +57,7 @@ rm $OUT/system/build.prop;
 
 # Start compilation
 echo -e "${bldblu}Starting build for $DEVICE ${txtrst}"
-make tesla -j16
+make tesla 
 
 # Get elapsed time
 res2=$(date +%s.%N)
