@@ -39,7 +39,7 @@ export USE_PREBUILT_CHROMIUM=1
 
 # Lunch device
 echo -e "${bldblu}Lunching device... ${txtrst}"
-lunch "tesla_$DEVICE-userdebug"
+lunch "tipsy_$DEVICE-userdebug"
 
 # Remove previous build info
 echo -e "${bldblu}Removing previous build.prop ${txtrst}"
@@ -47,7 +47,7 @@ rm $OUT/system/build.prop;
 
 # Start compilation
 echo -e "${bldblu}Starting build for $DEVICE ${txtrst}"
-make tesla 
+make tipsy 
 
 # Get elapsed time
 res2=$(date +%s.%N)
