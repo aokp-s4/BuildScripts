@@ -42,12 +42,12 @@ echo -e "${bldblu}Lunching device... ${txtrst}"
 lunch "tipsy_$DEVICE-userdebug"
 
 # Remove previous build info
-echo -e "${bldblu}Removing previous build.prop ${txtrst}"
-rm $OUT/system/build.prop;
+echo -e "${bldblu}Removing previous build.prop and zip ${txtrst}"
+make dirty
 
 # Start compilation
 echo -e "${bldblu}Starting build for $DEVICE ${txtrst}"
-make tipsy 
+make tipsy -j12
 
 # Get elapsed time
 res2=$(date +%s.%N)
