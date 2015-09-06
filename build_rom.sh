@@ -41,6 +41,16 @@ export USE_PREBUILT_CHROMIUM=1
 echo -e "${bldblu}Lunching device... ${txtrst}"
 lunch "tipsy_$DEVICE-userdebug"
 
+#copy bootanimation if needed
+if [ ! -f "prebuilts/chromium/$1/media/bootanimation.zip" ]; then
+	echo "let's copy the bootanimation to the prebuilt directory"
+	mkdir -p ~/tipsy/prebuilts/chromium/$1/media
+	cp vendor/tipsy/config/media/bootanimation.zip prebuilts/chromium/$1/media/bootanimation.zip
+	echo "Bootanimation copied"
+    else
+	echo "Bootanimation exists"
+fi
+
 # Remove previous build info
 echo -e "${bldblu}Removing previous build.prop and zip ${txtrst}"
 make dirty
