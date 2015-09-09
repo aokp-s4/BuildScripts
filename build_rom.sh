@@ -57,7 +57,7 @@ make dirty
 
 # Start compilation
 echo -e "${bldblu}Starting build for $DEVICE ${txtrst}"
-make tipsy -j12
+mka tipsy
 
 # Get elapsed time
 res2=$(date +%s.%N)
