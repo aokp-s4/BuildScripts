@@ -44,7 +44,7 @@ lunch "tipsy_$DEVICE-userdebug"
 #copy bootanimation if needed
 if [ ! -f "prebuilts/chromium/$1/media/bootanimation.zip" ]; then
 	echo "let's copy the bootanimation to the prebuilt directory"
-	mkdir -p ~/tipsy/prebuilts/chromium/$1/media
+	mkdir -p prebuilts/chromium/$1/media
 	cp vendor/tipsy/config/media/bootanimation.zip prebuilts/chromium/$1/media/bootanimation.zip
 	echo "Bootanimation copied"
     else
