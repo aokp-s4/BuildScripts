@@ -35,7 +35,7 @@ echo -e "${bldblu}Setting up build environment ${txtrst}"
 . build/envsetup.sh
 
 # Prebuilt chromium
-export USE_PREBUILT_CHROMIUM=1
+# export USE_PREBUILT_CHROMIUM=1
 
 # Lunch device
 echo -e "${bldblu}Lunching device... ${txtrst}"
