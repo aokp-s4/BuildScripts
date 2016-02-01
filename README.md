@@ -1,7 +1,7 @@
 build_rom.sh
 ---------
 
-	. build_rom.sh device "new" "restart"
+	. build.sh device "new" "restart"
 
 Parameter 1: The device
 
