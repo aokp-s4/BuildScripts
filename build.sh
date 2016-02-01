@@ -22,13 +22,7 @@ res1=$(date +%s.%N)
 # Reading mode
 if [ ! -z $MODE ]; then
 if [ $MODE == "restart" ]; then
-       echo -e "${grn}Local manifest synced ${txtrst}"
-       echo -e "${grn}Restarting build without cleaning ${txtrst}"
-       echo -e "${bldblu}Cleaning up out folder and setting CCACHE ${txtrst}"
-       export CCACHE_DIR=/media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache
-       echo -e "${bldblu}CCACHE is set to /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache${txtrst}"
-       echo -e "${bldblu}CCACHE current status${txtrst}"
-       /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/ccache -s
+       echo -e "${bldblu}Cleaning up out folder ${txtrst}"
        read -p "Press [Enter] key to proceed..."
        echo -e "${bldblu}Setting up build environment ${txtrst}"
        . build/envsetup.sh
@@ -44,13 +38,7 @@ else
 fi
 if [ ! -z $MODE ]; then
 if [ $MODE == "new" ]; then
-       echo -e "${grn}Local manifest synced ${txtrst}"
-       echo -e "${grn}New build cleaning out directory ${txtrst}"
-       echo -e "${bldblu}Cleaning up out folder and setting CCACHE ${txtrst}"
-       export CCACHE_DIR=/media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache
-       echo -e "${bldblu}CCACHE is set to /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache${txtrst}"
-       echo -e "${bldblu}CCACHE current status${txtrst}"
-       /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/ccache -s
+       echo -e "${bldblu}Cleaning up out folder ${txtrst}"
        read -p "Press [Enter] key to proceed..."
        make clobber
        echo -e "${bldblu}Setting up build environment ${txtrst}"
@@ -67,16 +55,9 @@ else
 fi
 if [ ! -z $MODE ]; then
 if [ $MODE == "wipe" ]; then
-       echo -e "${grn}Local manifest synced ${txtrst}"
-       echo -e "${grn}New build cleaning out directory and clearing CCACHE ${txtrst}"
-       echo -e "${bldblu}Cleaning up out folder and setting CCACHE ${txtrst}"
-       export CCACHE_DIR=/media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache
-       echo -e "${bldblu}CCACHE is set to /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/.ccache${txtrst}"
-       echo -e "${bldblu}CCACHE current status${txtrst}"
-       /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/ccache -s
+       echo -e "${bldblu}Cleaning up out folder ${txtrst}"
        read -p "Press [Enter] key to proceed..."
        make clobber
-       /media/chris/Drive/tesla/prebuilts/misc/linux-x86/ccache/ccache -C
        read -p "Press [Enter] key to proceed..."
        echo -e "${bldblu}Setting up build environment ${txtrst}"
        . build/envsetup.sh

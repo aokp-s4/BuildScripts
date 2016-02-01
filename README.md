@@ -1,14 +1,12 @@
 build_rom.sh
 ---------
 
-	. build_rom.sh device c
+	. build_rom.sh device "new" "restart"
 
-Parameter 1: The device tree
+Parameter 1: The device
 
-Parameter 2: Build mode: c | r | cr | [leave it empty]
+Parameter 2: Build mode: restart or new
 
-c = clean build
+new = clears output directory and starts build
 
-r = tag as a released build
-
-cr = clean build and tag as a released build
+restart = restarts build without clearing output. (useful if just need to fix simple error)
