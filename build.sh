@@ -29,7 +29,7 @@ if [ $MODE == "restart" ]; then
        echo -e "${bldblu}Lunching device... ${txtrst}"
        lunch "broken_$DEVICE-userdebug"
        echo -e "${grn}Device and vendor repos synced ${txtrst}"
-       mka tesla
+       mka broken
        res2=$(date +%s.%N)
        echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 fi
@@ -46,7 +46,7 @@ if [ $MODE == "new" ]; then
        echo -e "${bldblu}Lunching device... ${txtrst}"
        lunch "broken_$DEVICE-userdebug"
        echo -e "${grn}Device and vendor repos synced ${txtrst}"
-       mka tesla
+       mka broken
        res2=$(date +%s.%N)
        echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 fi
@@ -62,9 +62,9 @@ if [ $MODE == "wipe" ]; then
        echo -e "${bldblu}Setting up build environment ${txtrst}"
        . build/envsetup.sh
        echo -e "${bldblu}Lunching device... ${txtrst}"
-       lunch "tesla_$DEVICE-userdebug"
+       lunch "broken_$DEVICE-userdebug"
        echo -e "${grn}Device and vendor repos synced ${txtrst}"
-       mka tesla
+       mka broken
        res2=$(date +%s.%N)
        echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 fi
